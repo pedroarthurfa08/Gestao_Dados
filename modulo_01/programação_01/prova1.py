@@ -10,8 +10,8 @@ titulo=\
 '''---------------------------------------------------------
 CURSO SUPERIOR DE TECNOLOGIA EM GESTÃO DE DADOS/UFPI/CEAD
 DISCIPLINA: PROGRAMAÇÃO I
-DISCENTE: PEDRO ARTHUR FONTENELE
-MATRÍCULA: XXXXXXXXXXX
+DISCENTE: PEDRO ARTHUR FONTENELE ALVES
+MATRÍCULA: 20259076981
 ---------------------------------------------------------'''
 
 def questao1():
@@ -139,24 +139,82 @@ def questao16():
     print(f"Se uma pessoa fumar {qnt_cigarros_dia} cigarros por dia durante {qnt_anos} anos, essa pessoa perdeu {dias_perdidos} dias.")
 def questao17():
     print('\n', 'Questão 17.'.center(40,'-'))
+    vel_carro = float(input("Digite e velocidade do carro em km/h: "))
+    vel_max = 80
+    valor_multa_km = 5
+    if vel_carro > vel_max:
+        ultrapassa_vel = vel_carro - vel_max
+        multa = ultrapassa_vel * valor_multa_km
+        print(f"Velocidade de {ultrapassa_vel} km/h, portanto receberá multa no valor de R${multa} ")
+    else:
+        print(f"Velocidade dentro do limete da via, portanto sem multas.")
 
 def questao18():
     print('\n', 'Questão 18.'.center(40,'-'))
+    ano = int(input("Digite o ano do seu nascimento: "))
+    idade = 2025 - ano
+    if idade > 16:
+        print("Você está apto a votar.")
+    else:
+        print("Você não está apto a votar.")
 
 def questao19():
     print('\n', 'Questão 19.'.center(40,'-'))
+    nt1 = float(input("Digite a primeria nota: "))
+    nt2 = float(input("Digite a segunda nota: "))
+    media = (nt1 + nt2) / 2
+    print(f"Média igual a {media}")
+    if media > 7 :
+        print("Aluno teve um bom aproveitamento.")
+    else:
+        print("Aluno não teve um bom aproveitamento.")
 
 def questao20():
     print('\n', 'Questão 20.'.center(40,'-'))
+    n = int(input("Digite um número: "))
+    if n % 2 == 0:
+        print("Este número é PAR.")
+    else:
+        print("Este número é IMPAR.")
 
 def questao21():
     print('\n', 'Questão 21.'.center(40,'-'))
+    ano = int(input("Digite um ano: "))
+    if (ano % 4 == 0 and ano % 100 != 0 ) or (ano % 400 == 0):
+        print(f"O ano {ano} é BISSEXTO")
+    else:
+        print(f"O ano {ano} não é BISSEXTO")
 
 def questao22():
     print('\n', 'Questão 22.'.center(40,'-'))
+    ano_atual = int(input("Informe o ano atual: "))
+    ano_nascimento = int(input("Informe o seu ano de nascimento: "))
+    idade = ano_atual - ano_nascimento
+    if idade < 18:
+        falta = 18 - idade
+        print(f"Falta {falta} para o seu alistamento.")
+    elif idade > 18:
+        passou = idade - 18
+        print(f"Passou {passou} do o seu alistamento.")
+    else:
+        print("Você deve se alistar esse ano")
 
 def questao23():
     print('\n', 'Questão 23.'.center(40,'-'))
+    nome = input("Informe seu nome: ")
+    sexo = int(input("Digite '1' para masculino e '2' para feminino."))
+    valor_compras = float(input("Qual o valor das compras: "))
+
+    if sexo == 1:
+        valor_desconto_1 = valor_compras * 0.05
+        valor_total_1 = valor_compras - valor_desconto_1
+        print(f"Senhor {nome} suas compras de R$ {valor_compras} tiveram um desconto no valor R${valor_desconto_1}, deste modo sairam no valor de {valor_total_1}")
+    elif sexo == 2:
+        valor_desconto_2 = valor_compras * 0.05
+        valor_total_2 = valor_compras - valor_desconto_2
+        print(f"Senhor {nome} suas compras de R$ {valor_compras} tiveram um desconto no valor R${valor_desconto_2}, deste modo sairam no valor de {valor_total_2}")
+    else:
+        print("Sexo Inválido.")
 
 def questao24():
     print('\n', 'Questão 24.'.center(40,'-'))
