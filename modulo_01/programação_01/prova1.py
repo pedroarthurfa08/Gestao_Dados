@@ -218,27 +218,129 @@ def questao23():
 
 def questao24():
     print('\n', 'Questão 24.'.center(40,'-'))
+    distancia = float(input("Qual será a distância que você deseja percorrer em km? "))
+    if distancia <= 200:
+        passagem = distancia * 0.50
+    else:
+        passagem = distancia * 0.40
+    print(f"O preço da passagem para {distancia:.1f} km é R$ {passagem:.2f}") 
 
 def questao25():
     print('\n', 'Questão 25.'.center(40,'-'))
+    seg1 = float(input("Informe o primerio segmento de reta: "))
+    seg2 = float(input("Informe o segundo segmento de reta: "))
+    seg3 = float(input("Informe o terceiro segmento de reta: "))
+    if seg1 < seg2 + seg3 and seg2 < seg1 + seg3 and seg3 < seg1 + seg2:
+        print("Os segmentos inseridos podem formar um triângulo")
+    else:
+        print("Os segmentos inseridos não podem formar um triângulo")
 
 def questao26():
     print('\n', 'Questão 26.'.center(40,'-'))
+    n1 = int(input("Informe o primeiro número: "))
+    n2 = int(input("Informe o segundo número: "))
+    if n1 > n2:
+        print("O primeiro valor é o maior.")
+    elif n2 > n1:
+        print("O segundo valor é o maior.")
+    else: 
+        print("Não existe valor maior, os dois são iguais.")
 
 def questao27():
     print('\n', 'Questão 27.'.center(40,'-'))
+    nt1 = float(input("Digite a primeria nota: "))
+    nt2 = float(input("Digite a segunda nota: "))
+    media = (nt1 + nt2) / 2
+    if media <= 4.9:
+        print("Reprovado")
+    elif media >= 5.0 and media <= 6.9:
+        print("Recuperação")
+    else:
+        print("Aprovado")
 
 def questao28():
     print('\n', 'Questão 28.'.center(40,'-'))
+    largura = float(input("Informe a largura do terreno: "))
+    comprimento = float(input("Informe a comprimento do terreno: "))
+    area = largura * comprimento
+    print(f"Área do terreno: {area:.2f} m²")
+    if area < 100:
+        print("TERRENO POPULAR")
+    elif area < 500:
+        print("TERRENO MASTER")
+    else :
+        print("TERRENO VIP")
 
 def questao29():
     print('\n', 'Questão 29.'.center(40,'-'))
+    nome = input("Digite seu nome: ")
+    salario = float(input("Informe seu salário: "))
+    temp_empresa = int(input("Quantos anos de trabalho na empresa: "))
+    n_salario_1 = (salario * 0.03) + salario
+    n_salario_2 = (salario * 0.125) + salario
+    n_salario_3 = (salario * 0.20) + salario
+    if temp_empresa <= 3:
+        print(f"Senhor(a) {nome}, com o ajuste de 3% seu novo salário será de R$ {n_salario_1}.")
+    elif temp_empresa <= 10:
+        print(f"Senhor(a) {nome}, com o ajuste de 12,5% seu novo salário será de R$ {n_salario_2}.")
+    elif temp_empresa >= 10:
+        print(f"Senhor(a) {nome}, com o ajuste de 20% seu novo salário será de R$ {n_salario_3}.")
+    else:
+        print("Informe uma quantidade de anos correta.")
 
 def questao30():
     print('\n', 'Questão 30.'.center(40,'-'))
+    seg1 = float(input("Informe o primerio segmento de reta: "))
+    seg2 = float(input("Informe o segundo segmento de reta: "))
+    seg3 = float(input("Informe o terceiro segmento de reta: "))
+    if seg1 < seg2 + seg3 and seg2 < seg1 + seg3 and seg3 < seg1 + seg2:
+        print("Os segmentos inseridos podem formar um triângulo")
+        if seg1 == seg2 == seg3:
+            print("EQUILÁTERO: todos os lados iguais")
+        elif seg1 == seg2 or seg2 == seg1 or seg2 == seg3:
+            print("ISÓSCELES: dois lados iguais")
+        else: 
+            print("ESCALENO: todos os lados diferentes ")
+
+            print("Os segmentos inseridos podem formar um triângulo")
+    else:
+        print("Os segmentos inseridos não podem formar um triângulo")
 
 def questao31():
     print('\n', 'Questão 31.'.center(40,'-'))
+    import random
+    def escolha_usuario():
+        escolha = input("Escolha Pedra, Papel ou Tesoura (ou 'sair' para encerrar): ").strip().lower()
+        if escolha in ("pedra", "papel", "tesoura"):
+            return escolha
+        elif escolha == "sair":
+            return None
+        else:
+            print("Escolha inválida, tente novamnete.")
+            return escolha_usuario()
+    def escolha_computador():
+        return random.choice(["pedra", "papel", "tesoura"])
+    def vencedor(usuario, computador):
+        if usuario == computador:
+            return "Empate!"
+        elif (usuario == "pedra" and computador == "tesoura") or \
+            (usuario == "tesoura" and computador == "papel") or \
+            (usuario == "papel" and computador == "pedra"):
+            return "Você venceu!"
+        else:
+            return "Você perdeu e o pc ganhou!"  
+    def main():
+        print("Bem-vindo ao jogo Pedra, Papel e Tesoura!")
+        while True:
+            usuario = escolha_usuario()
+            if usuario is None:
+                print("Encerrando o jogo...")
+                break
+            computador = escolha_computador()
+            print(f"Computador escolheu: {computador}")
+            resultado = vencedor(usuario, computador)
+            print(resultado)
+    main()
 
 def questao32():
     print('\n', 'Questão 32.'.center(40,'-'))
